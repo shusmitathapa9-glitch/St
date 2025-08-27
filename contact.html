@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Janata Boarding School</title>
+
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* General Styles */
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f8fb;
+      color: #333;
+    }
+    h1, h2, h3 { margin: 0; }
+
+    /* Header */
+    header {
+      background: #004080;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Navbar */
+    nav {
+      background: #0066cc;
+      padding: 12px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 18px;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+    nav a:hover, nav a.active { color: #ffd700; }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("contact-banner.jpg") no-repeat center center/cover;
+      color: #fff;
+    }
+    .hero h1 { font-size: 38px; margin-bottom: 10px; }
+    .hero p { font-size: 18px; }
+
+    /* Contact Section */
+    .contact-section {
+      max-width: 900px;
+      margin: auto;
+      padding: 50px 20px;
+    }
+    .contact-info, .contact-form {
+      background: white;
+      padding: 25px;
+      margin-bottom: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .contact-info h3, .contact-form h3 { color: #004080; margin-bottom: 15px; }
+    .contact-info p { margin-bottom: 10px; color: #555; }
+    .contact-form form {
+      display: flex;
+      flex-direction: column;
+    }
+    .contact-form input, .contact-form textarea {
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    .contact-form button {
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: #004080;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .contact-form button:hover { background: #0066cc; }
+
+    /* Footer */
+    footer {
+      background: #004080;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: 40px;
+    }
+    footer .social {
+      margin-top: 10px;
+    }
+    footer .social a {
+      margin: 0 10px;
+      color: white;
+      font-size: 22px;
+      display: inline-block;
+      transition: transform 0.3s, color 0.3s;
+    }
+    footer .social a:hover {
+      color: #ffd700;
+      transform: scale(1.2);
+    }
+
+    /* Saved Messages Display */
+    .saved-messages {
+      background: #e6f0ff;
+      padding: 20px;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+    .saved-messages h3 { color: #004080; margin-bottom: 15px; }
+    .saved-messages div {
+      background: white;
+      padding: 12px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .saved-messages div p { margin: 5px 0; }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Janata Boarding School</h1>
+    <p>Kamalamai, Sindhuli</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="teachers.html">Teachers</a>
+    <a href="facilities.html">Facilities</a>
+    <a href="notice.html">Notices</a>
+    <a href="contact.html" class="active">Contact</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Contact Us</h1>
+    <p>We are here to help you. Get in touch with us today!</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <h3>Contact Information</h3>
+      <p><strong>Email:</strong> janataboardingschool@gmail.com</p>
+      <p><strong>Phone:</strong> +977-9844041671</p>
+      <p><strong>Address:</strong> Kamalamai, Sindhuli, Nepal</p>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="contact-form">
+      <h3>Send Us a Message</h3>
+      <form id="contactForm">
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+    <!-- Display Saved Messages -->
+    <div class="saved-messages" id="savedMessages">
+      <h3>Saved Messages</h3>
+      <!-- Messages will appear here -->
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Janata Boarding School. All Rights Reserved.</p>
+    <div class="social">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const savedMessagesDiv = document.getElementById('savedMessages');
+
+    // Function to display all saved messages
+    function displayMessages() {
+      savedMessagesDiv.innerHTML = '<h3>Saved Messages</h3>'; // Reset content
+      const messages = JSON.parse(localStorage.getItem('contactMessages')) || [];
+      messages.forEach((msg, index) => {
+        const msgDiv = document.createElement('div');
+        msgDiv.innerHTML = `
+          <p><strong>Name:</strong> ${msg.name}</p>
+          <p><strong>Email:</strong> ${msg.email}</p>
+          <p><strong>Message:</strong> ${msg.message}</p>
+        `;
+        savedMessagesDiv.appendChild(msgDiv);
+      });
+    }
+
+    // Load messages on page load
+    window.addEventListener('load', displayMessages);
+
+    // Handle form submission
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+
+      const newMessage = { name, email, message };
+
+      // Get existing messages or empty array
+      const messages = JSON.parse(localStorage.getItem('contactMessages')) || [];
+      messages.push(newMessage);
+
+      // Save updated messages to localStorage
+      localStorage.setItem('contactMessages', JSON.stringify(messages));
+
+      alert('Your message has been saved locally!');
+
+      form.reset(); // Clear the form
+      displayMessages(); // Update displayed messages
+    });
+  </script>
+
+</body>
+</html>

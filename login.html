@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login & Register - Janata Boarding School</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      width: 350px;
+      text-align: center;
+      position: relative;
+    }
+    .container h2 {
+      margin-bottom: 20px;
+      color: #004080;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      background: #004080;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #ffd700;
+      color: #004080;
+    }
+    .switch {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #555;
+      cursor: pointer;
+    }
+    #message {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+    #greeting {
+      margin-top: 10px;
+      color: #004080;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2 id="form-title">Register</h2>
+
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <input type="password" id="confirm-password" placeholder="Confirm Password">
+
+    <button onclick="handleSubmit()">Register</button>
+    <p class="switch" onclick="toggleForm()">Already have an account? Login</p>
+    <p id="message"></p>
+    <div id="greeting"></div>
+  </div>
+
+  <script>
+    let isLogin = false;
+
+    function toggleForm() {
+      isLogin = !isLogin;
+      document.getElementById("form-title").innerText = isLogin ? "Login" : "Register";
+      document.querySelector("button").innerText = isLogin ? "Login" : "Register";
+      document.querySelector(".switch").innerText = isLogin 
+        ? "Don't have an account? Register" 
+        : "Already have an account? Login";
+
+      document.getElementById("confirm-password").style.display = isLogin ? "none" : "block";
+      document.getElementById("message").innerText = "";
+    }
+
+    function handleSubmit() {
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const confirmPassword = document.getElementById("confirm-password").value.trim();
+      const messageEl = document.getElementById("message");
+      const greetingEl = document.getElementById("greeting");
+
+      if(!username || !password || (!isLogin && !confirmPassword)) {
+        messageEl.style.color = "red";
+        messageEl.innerText = "Please fill all fields!";
+        return;
+      }
+
+      if(isLogin) {
+        // Login process
+        const storedUser = localStorage.getItem("username");
+        const storedPass = localStorage.getItem("password");
+
+        if(username === storedUser && password === storedPass) {
+          const lastVisit = localStorage.getItem("lastVisit");
+          const now = new Date().toLocaleString();
+          greetingEl.style.color = "#004080";
+          greetingEl.innerText = `Welcome back, ${username}! Last visit: ${lastVisit ? lastVisit : "First time!"}`;
+          localStorage.setItem("lastVisit", now);
+          messageEl.style.color = "green";
+          messageEl.innerText = "Login successful ✅";
+        } else {
+          messageEl.style.color = "red";
+          messageEl.innerText = "Invalid username or password ❌";
+        }
+      } else {
+        // Registration process
+        if(password !== confirmPassword) {
+          messageEl.style.color = "red";
+          messageEl.innerText = "Passwords do not match ❌";
+          return;
+        }
+
+        localStorage.setItem("username", username);
+        localStorage.setItem("password", password);
+        const now = new Date().toLocaleString();
+        localStorage.setItem("lastVisit", now);
+
+        messageEl.style.color = "green";
+        messageEl.innerText = "Registered successfully ✅";
+        document.getElementById("greeting").innerText = `Welcome, ${username}! This is your first visit.`;
+      }
+    }
+  </script>
+
+</body>
+</html>

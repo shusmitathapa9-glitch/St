@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Janata Boarding School</title>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* General styles */
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f8fb;
+      color: #333;
+    }
+    h1, h2, h3 { margin: 0; }
+    a { text-decoration: none; }
+
+    /* Header */
+    header {
+      background: #004080;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Greeting message */
+    #greeting {
+      font-size: 18px;
+      margin-top: 8px;
+      color: #ffd700;
+    }
+
+    /* Navbar */
+    nav {
+      background: #0066cc;
+      padding: 12px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: #ffd700; }
+
+    /* Hero */
+    .hero {
+      background: url("about-banner.jpg") no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+    }
+    .hero h1 {
+      font-size: 38px;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+    }
+
+    /* Content Section */
+    section {
+      padding: 50px 20px;
+      max-width: 1100px;
+      margin: auto;
+      text-align: center;
+    }
+    section p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    /* Cards (Mission, Vision, Values) */
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      flex: 1 1 300px;
+      max-width: 320px;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card h3 {
+      color: #004080;
+      margin-bottom: 10px;
+    }
+
+    /* Footer */
+    footer {
+      background: #004080;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: 40px;
+    }
+    footer .social {
+      margin-top: 10px;
+    }
+    footer .social a {
+      margin: 0 10px;
+      color: white;
+      font-size: 22px;
+      display: inline-block;
+      transition: transform 0.3s, color 0.3s;
+    }
+    footer .social a:hover {
+      color: #ffd700;
+      transform: scale(1.2);
+    }
+
+    /* Responsive adjustments */
+    @media(max-width:768px){
+      nav a { display:block; margin:8px 0; }
+      .hero { padding:60px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Janata Boarding School</h1>
+    <p>Kamalamai, Sindhuli</p>
+    <div id="greeting"></div>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="teachers.html">Teachers</a>
+    <a href="facilities.html">Facilities</a>
+    <a href="notice.html">Notices</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">login</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>About Us</h1>
+  </section>
+
+  <!-- About Section -->
+  <section>
+    <h2>Welcome to Janata Boarding School</h2>
+    <p>
+      Established in the heart of Kamalamai, Sindhuli, Janata Boarding School has been a pillar of
+      education for decades. We are committed to academic excellence, moral values, discipline, and
+      holistic development. Our dedicated faculty, modern teaching methods, and supportive environment
+      ensure that every student is guided towards a brighter future.
+    </p>
+  </section>
+
+  <!-- Mission, Vision, Values -->
+  <section>
+    <h2>Our Core Principles</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3>Our Mission</h3>
+        <p>To provide quality education that fosters creativity, innovation, and a love for lifelong learning.</p>
+      </div>
+      <div class="card">
+        <h3>Our Vision</h3>
+        <p>To be recognized as a leading institution that nurtures responsible citizens and global leaders.</p>
+      </div>
+      <div class="card">
+        <h3>Our Values</h3>
+        <p>Discipline, Respect, Integrity, Compassion, and Academic Excellence are the foundation of our school culture.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- History Section -->
+  <section>
+    <h2>Our Journey</h2>
+    <p>
+      From humble beginnings, Janata Boarding School has grown into one of the most trusted schools in Sindhuli.
+      Over the years, we have achieved milestones in academics, sports, cultural activities, and community service.
+      Our alumni continue to excel nationally and internationally, carrying forward the values instilled in them here.
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Janata Boarding School. All Rights Reserved.</p>
+    <div class="social">
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+  </footer>
+
+  <script>
+    // Check if user name exists in localStorage
+    let visitorName = localStorage.getItem('visitorName');
+
+    if (!visitorName) {
+      visitorName = prompt("Welcome! Please enter your name:");
+      if (visitorName) {
+        localStorage.setItem('visitorName', visitorName);
+      }
+    }
+
+    if (visitorName) {
+      document.getElementById('greeting').innerText = `Hello, ${visitorName}! Welcome to Janata Boarding School.`;
+    }
+  </script>
+</body>
+</html>

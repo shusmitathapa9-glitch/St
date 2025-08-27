@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Janata Boarding School - Home</title>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+ /* Global */
+  body { margin:0; font-family:"Segoe UI", Arial, sans-serif; background:#f4f8fb; color:#333; scroll-behavior:smooth; }
+  h1,h2,h3,h4 { margin:0; }
+  a { text-decoration:none; }
+
+  /* Header */
+  header { background:#004080; color:white; padding:15px 20px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; flex-direction:column; }
+  header h1 { font-size:26px; }
+  header p { margin-top:5px; }
+  #greeting { font-size:16px; color:#ffd700; margin-top:5px; }
+
+  nav { background:#0066cc; padding:12px; text-align:center; }
+  nav a { color:white; margin:0 18px; font-weight:bold; font-size:16px; transition:0.3s; }
+  nav a:hover, nav a.active { color:#ffd700; transform:scale(1.1); }
+
+  /* Hero */
+  .hero { position:relative; background:url('school-banner.jpg') no-repeat center center/cover; color:white; text-align:center; padding:120px 20px; overflow:hidden; }
+  .hero::before { content:""; position:absolute; top:0; left:0; right:0; bottom:0; background: rgba(0,0,0,0.5); z-index:0; }
+  .hero h2 { font-size:48px; text-shadow:2px 2px 5px rgba(0,0,0,0.7); position:relative; z-index:1; animation:fadeUp 2s ease forwards; }
+  .hero p { font-size:22px; text-shadow:1px 1px 3px rgba(0,0,0,0.7); position:relative; z-index:1; margin:15px 0; }
+  .typed-text { border-right:2px solid white; display:inline; animation: blink-caret 0.8s step-end infinite; }
+  .hero button { padding:12px 30px; font-size:18px; border:none; border-radius:8px; background:#ffd700; color:#004080; font-weight:bold; cursor:pointer; transition:0.3s; }
+  .hero button:hover { background:#fff; }
+
+  @keyframes blink-caret { from,to{border-color:transparent;}50%{border-color:white;} }
+
+  /* Sections */
+  section { padding:60px 20px; max-width:1200px; margin:auto; text-align:center; opacity:0; transform:translateY(50px); animation:fadeUp 1s forwards; }
+  section h2 { margin-bottom:30px; color:#004080; }
+  section p { margin-bottom:20px; line-height:1.6; font-size:16px; color:#555; }
+
+  /* Leadership Cards */
+  .card-container { display:flex; flex-wrap:wrap; gap:30px; justify-content:center; }
+  .card { background:white; padding:25px; border-radius:20px; box-shadow:0 4px 15px rgba(0,0,0,0.2); flex:1 1 280px; max-width:300px; transition:transform 0.5s, box-shadow 0.5s; opacity:0; transform:translateY(50px); text-align:center; }
+  .card.show { opacity:1; transform:translateY(0); }
+  .card img { width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:15px; transition:transform 0.5s; }
+  .card:hover img { transform:scale(1.1) rotate(5deg); }
+  .card h3 { margin-bottom:10px; color:#004080; }
+  .card p { font-weight:bold; color:#333; }
+
+  /* Facilities */
+  .facilities { display:flex; flex-wrap:wrap; gap:25px; justify-content:center; }
+  .facility { background:white; padding:20px; border-radius:15px; flex:1 1 250px; max-width:250px; box-shadow:0 4px 12px rgba(0,0,0,0.15); transition:transform 0.3s; }
+  .facility i { font-size:40px; color:#004080; margin-bottom:15px; transition:transform 0.3s; }
+  .facility:hover { transform:translateY(-10px) scale(1.05); }
+  .facility:hover i { transform:scale(1.3); }
+  .facility h4 { margin-bottom:10px; color:#004080; }
+
+  /* Academics */
+  .academics { display:flex; flex-wrap:wrap; gap:25px; justify-content:center; }
+  .academic { background:white; padding:20px; border-radius:15px; flex:1 1 250px; max-width:250px; box-shadow:0 4px 12px rgba(0,0,0,0.15); transition:transform 0.3s; }
+  .academic h4 { color:#004080; margin-bottom:10px; }
+  .academic p { color:#555; }
+  .academic:hover { transform:translateY(-10px); }
+
+  /* Achievements */
+  .achievements { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
+  .achievement { background:white; padding:15px; border-radius:12px; flex:1 1 200px; max-width:220px; box-shadow:0 3px 10px rgba(0,0,0,0.1); transition:transform 0.3s; }
+  .achievement:hover { transform:scale(1.05); }
+  .achievement h4 { color:#004080; margin-bottom:8px; }
+
+  /* Notices */
+  .notices { display:flex; flex-direction:column; gap:15px; }
+  .notice { background:white; padding:15px; border-left:5px solid #004080; border-radius:8px; transition:transform 0.3s; }
+  .notice:hover { transform:translateX(10px); }
+
+  /* Testimonials */
+  .testimonial-container { display:flex; overflow-x:auto; gap:20px; padding-bottom:20px; }
+  .testimonial { background:white; padding:20px; min-width:250px; border-radius:15px; box-shadow:0 4px 12px rgba(0,0,0,0.1); flex-shrink:0; }
+
+  /* Footer */
+  footer { background:#004080; color:white; text-align:center; padding:25px 15px; margin-top:40px; }
+  footer .social { margin-top:10px; }
+  footer .social a { margin:0 10px; color:white; font-size:22px; display:inline-block; transition: transform 0.3s, color 0.3s; }
+  footer .social a:hover { color:#ffd700; transform:scale(1.3); }
+
+  @keyframes fadeUp { 0%{opacity:0;transform:translateY(50px);}100%{opacity:1;transform:translateY(0);} }
+
+  /* Responsive */
+  @media(max-width:768px){
+    .hero h2 { font-size:32px; }
+    .hero p { font-size:18px; }
+    nav a { margin:0 10px; font-size:14px; }
+    .card-container, .facilities, .academics, .achievements { flex-direction:column; align-items:center; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Janata Boarding School</h1>
+  <p>Kamalamai, Sindhuli</p>
+  <div id="greeting"></div>
+</header>
+
+<nav>
+  <a href="index.html" class="active">Home</a>
+  <a href="about.html">About</a>
+  <a href="teachers.html">Teachers</a>
+  <a href="facilities.html">Facilities</a>
+  <a href="notice.html">Notices</a>
+  <a href="contact.html">Contact</a>
+  <a href="login.html">Login</a>
+</nav>
+
+<section class="hero">
+  <h2>Welcome to Janata Boarding School</h2>
+  <p><span class="typed-text"></span></p>
+  <button onclick="window.location.href='contact.html'">Contact Us</button>
+</section>
+
+<!-- About -->
+<section>
+  <h2>About Us</h2>
+  <p>Founded in 2052, Janata Boarding School has been a center of academic excellence and holistic development. We provide a nurturing environment to foster creativity, critical thinking, and leadership in our students.</p>
+  <p>Our vision is to create responsible global citizens through quality education, strong ethics, and extracurricular excellence. Our teachers are highly trained professionals dedicated to student success.</p>
+</section>
+
+<!-- Leadership -->
+<section>
+  <h2>Our Leadership</h2>
+  <div class="card-container">
+    <div class="card">
+      <img src="principal.jpg" alt="Principal">
+      <h3>Principal</h3>
+      <p>Mr. Tulsi Dhakal</p>
+    </div>
+    <div class="card">
+      <img src="vice-principal.jpg" alt="Vice Principal">
+      <h3>Vice Principal</h3>
+      <p>Mr. Ram Prasad Thapa</p>
+    </div>
+  </div>
+</section>
+
+<!-- Facilities -->
+<section>
+  <h2>Our Facilities</h2>
+  <div class="facilities">
+    <div class="facility">
+      <i class="fas fa-book"></i>
+      <h4>Library</h4>
+      <p>Extensive collection of books, journals, and e-resources.</p>
+      <button onclick="window.location.href='library.html'">Explore Library</button>
+    </div>
+    <div class="facility">
+      <i class="fas fa-flask"></i>
+      <h4>Science Labs</h4>
+      <p>Physics, Chemistry, Biology labs with modern equipment.</p>
+      <button onclick="window.location.href='science-lab.html'">Visit Science Lab</button>
+    </div>
+    <div class="facility">
+      <i class="fas fa-desktop"></i>
+      <h4>Computer Lab</h4>
+      <p>High-speed computers with latest software.</p>
+      <button onclick="window.location.href='computer-lab.html'">Open Computer Lab</button>
+    </div>
+  </div>
+</section>
+
+<!-- Academics -->
+<section>
+  <h2>Academics</h2>
+  <div class="academics">
+    <div class="academic"><h4>Grade 1-5</h4><p>Foundation of learning, focusing on literacy, numeracy, and creativity.</p></div>
+    <div class="academic"><h4>Grade 6-8</h4><p>Intermediate level with focus on sciences, mathematics, and languages.</p></div>
+    <div class="academic"><h4>Grade 9-10</h4><p>Preparation for board exams with strong emphasis on academics and co-curricular activities.</p></div>
+  </div>
+</section>
+
+<!-- Achievements -->
+<section>
+  <h2>Achievements</h2>
+  <div class="achievements">
+    <div class="achievement"><h4>Science Fair Winners</h4><p>Our students won district-level science competitions consecutively.</p></div>
+    <div class="achievement"><h4>Sports Champions</h4><p>Inter-school football and basketball tournament winners.</p></div>
+    <div class="achievement"><h4>Arts & Music</h4><p>National level music and arts competition accolades.</p></div>
+  </div>
+</section>
+
+<!-- Notices -->
+<section>
+  <h2>Latest Notices</h2>
+  <div class="notices">
+    <div class="notice">Admission open for academic year 2025-26.</div>
+    <div class="notice">Parent-Teacher meeting scheduled on 15th Sept.</div>
+    <div class="notice">Science fair results announced.</div>
+    <div class="notice">Annual Sports Day on 30th Oct.</div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section>
+  <h2>What Our Students Say</h2>
+  <div class="testimonial-container">
+    <div class="testimonial"><p>"I love the teachers and the environment here. I feel motivated every day!"</p><strong>- Siwani Thapa</strong></div>
+    <div class="testimonial"><p>"Sports facilities are amazing and help me stay active while studying."</p><strong>- Reshmika Magar</strong></div>
+    <div class="testimonial"><p>"The school helps me learn beyond textbooks. Extracurriculars are fun."</p><strong>- ANkit Raut</strong></div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 Janata Boarding School. All Rights Reserved.</p>
+  <div class="social">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    <a href="#"><i class="fab fa-youtube"></i></a>
+  </div>
+</footer>
+
+<script>
+  // Typing animation
+  const textElement = document.querySelector('.typed-text');
+  const messages = ["Quality education for a brighter tomorrow.", "Shaping future leaders.", "Excellence, Discipline, Knowledge."];
+  let index=0,charIndex=0;
+  function type() {
+    if(charIndex<messages[index].length){ textElement.textContent+=messages[index].charAt(charIndex); charIndex++; setTimeout(type,100);}
+    else{ setTimeout(erase,2000); }
+  }
+  function erase() {
+    if(charIndex>0){ textElement.textContent=messages[index].substring(0,charIndex-1); charIndex--; setTimeout(erase,50);}
+    else{ index=(index+1)%messages.length; setTimeout(type,500);}
+  }
+  document.addEventListener('DOMContentLoaded',type);
+
+  // Animate cards on scroll
+  const cards=document.querySelectorAll('.card');
+  window.addEventListener('scroll',()=>{const triggerBottom=window.innerHeight/5*4; cards.forEach(card=>{const cardTop=card.getBoundingClientRect().top; if(cardTop<triggerBottom){card.classList.add('show');}})});
+
+  // ===== LocalStorage: Visitor name & last visit =====
+  const greetingEl = document.getElementById('greeting');
+
+  let visitorName = localStorage.getItem('visitorName');
+  let lastVisit = localStorage.getItem('lastVisit');
+
+  if(!visitorName){
+    visitorName = prompt("Welcome! Please enter your name:");
+    if(visitorName) localStorage.setItem('visitorName', visitorName);
+  }
+
+  const now = new Date().toLocaleString();
+  if(visitorName){
+    let message = `Hello, ${visitorName}!`;
+    if(lastVisit){
+      message += ` Your last visit was on ${lastVisit}.`;
+    } else {
+      message += ` This is your first visit!`;
+    }
+    greetingEl.textContent = message;
+    localStorage.setItem('lastVisit', now);
+  }
+</script>
+
+</body>
+</html>

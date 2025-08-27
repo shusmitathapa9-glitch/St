@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facilities - Janata Boarding School</title>
+
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* General Body */
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f8fb;
+      color: #333;
+    }
+    h1, h2, h3 { margin: 0; }
+
+    /* Header */
+    header {
+      background: #004080;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      flex-direction: column;
+    }
+    #greeting {
+      font-size: 16px;
+      color: #ffd700;
+      margin-top: 5px;
+    }
+
+    /* Navbar */
+    nav {
+      background: #0066cc;
+      padding: 12px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 18px;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+    nav a:hover, nav a.active { color: #ffd700; }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("school-facility-banner.jpg") no-repeat center center/cover;
+      color: #fff;
+    }
+    .hero h1 { font-size: 38px; margin-bottom: 10px; }
+    .hero p { font-size: 18px; }
+
+    /* Facilities Section */
+    .facilities-section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .facilities-section h2 { color: #004080; margin-bottom: 20px; }
+    .facilities-section p { font-size: 16px; margin-bottom: 40px; }
+
+    .facilities {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .facility-card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .facility-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    }
+    .facility-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    .facility-card h3 {
+      color: #004080;
+      margin-bottom: 10px;
+    }
+    .facility-card p {
+      color: #555;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* Buttons */
+    .facility-card button {
+      margin-top: 12px;
+      padding: 10px 18px;
+      background: #004080;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .facility-card button:hover {
+      background: #ffd700;
+      color: #004080;
+      transform: scale(1.05);
+    }
+
+    /* Footer */
+    footer {
+      background: #004080;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: 40px;
+    }
+    footer .social {
+      margin-top: 10px;
+    }
+    footer .social a {
+      margin: 0 10px;
+      color: white;
+      font-size: 22px;
+      display: inline-block;
+      transition: transform 0.3s, color 0.3s;
+    }
+    footer .social a:hover {
+      color: #ffd700;
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Janata Boarding School</h1>
+    <p>Kamalamai, Sindhuli</p>
+    <div id="greeting"></div>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="teachers.html">Teachers</a>
+    <a href="facilities.html" class="active">Facilities</a>
+    <a href="notice.html">Notices</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Our Facilities</h1>
+    <p>Providing a safe, modern, and inspiring environment for learning and development.</p>
+  </section>
+
+  <!-- Facilities Section -->
+  <section class="facilities-section">
+    <h2>Explore Our Facilities</h2>
+    <p>We provide a range of facilities to ensure holistic development and academic excellence for our students.</p>
+
+    <div class="facilities">
+
+      <!-- Library -->
+      <div class="facility-card">
+        <img src="123.jpg" alt="Library">
+        <h3>Library</h3>
+        <p>A well-stocked library with books, journals, and digital resources to enhance knowledge and research skills.</p>
+        <a href="library.html"><button>Explore Library</button></a>
+      </div>
+
+      <!-- Science Lab -->
+      <div class="facility-card">
+        <img src="science-lab.jpg" alt="Science Lab">
+        <h3>Science Laboratory</h3>
+        <p>Modern physics, chemistry, and biology labs for practical learning and experimentation.</p>
+        <a href="science-lab.html"><button>Explore Lab</button></a>
+      </div>
+
+      <!-- Computer Lab -->
+      <div class="facility-card">
+        <img src="computer-lab.jpg" alt="Computer Lab">
+        <h3>Computer Lab</h3>
+        <p>High-tech computers with latest software and internet access to support digital learning.</p>
+        <a href="computer-lab.html"><button>Explore Computer Lab</button></a>
+      </div>
+
+      <!-- Sports -->
+      <div class="facility-card">
+        <img src="sports.jpg" alt="Sports Ground">
+        <h3>Sports & Games</h3>
+        <p>Well-maintained playgrounds and indoor facilities for football, basketball, volleyball, and more.</p>
+        <a href="sports.html"><button>Explore Sports</button></a>
+      </div>
+
+      <!-- Transport -->
+      <div class="facility-card">
+        <img src="transport.jpg" alt="Transport">
+        <h3>Transportation</h3>
+        <p>Safe and reliable transport for students covering major areas in the city.</p>
+        <a href="#"><button>Explore Transport</button></a>
+      </div>
+
+      <!-- Cafeteria -->
+      <div class="facility-card">
+        <img src="cafeteria.jpg" alt="Cafeteria">
+        <h3>Cafeteria</h3>
+        <p>Clean and hygienic cafeteria offering nutritious meals for students and staff.</p>
+        <a href="#"><button>Explore Cafeteria</button></a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Janata Boarding School. All Rights Reserved.</p>
+    <div class="social">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+  </footer>
+
+  <script>
+    // ===== LocalStorage: Visitor name & last visit =====
+    const greetingEl = document.getElementById('greeting');
+
+    let visitorName = localStorage.getItem('visitorName');
+    let lastVisit = localStorage.getItem('lastVisit');
+
+    if(!visitorName){
+      visitorName = prompt("Welcome! Please enter your name:");
+      if(visitorName) localStorage.setItem('visitorName', visitorName);
+    }
+
+    const now = new Date().toLocaleString();
+    if(visitorName){
+      let message = `Hello, ${visitorName}!`;
+      if(lastVisit){
+        message += ` Your last visit was on ${lastVisit}.`;
+      } else {
+        message += ` This is your first visit!`;
+      }
+      greetingEl.textContent = message;
+      localStorage.setItem('lastVisit', now);
+    }
+  </script>
+</body>
+</html>

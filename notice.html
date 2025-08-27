@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notices - Janata Boarding School</title>
+
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* General Styles */
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f8fb;
+      color: #333;
+    }
+    h1, h2, h3 { margin: 0; }
+
+    /* Header */
+    header {
+      background: #004080;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      flex-direction: column;
+    }
+    #greeting {
+      font-size: 16px;
+      color: #ffd700;
+      margin-top: 5px;
+    }
+
+    /* Navbar */
+    nav {
+      background: #0066cc;
+      padding: 12px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 18px;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+    nav a:hover, nav a.active { color: #ffd700; }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("notices-banner.jpg") no-repeat center center/cover;
+      color: #fff;
+    }
+    .hero h1 { font-size: 38px; margin-bottom: 10px; }
+    .hero p { font-size: 18px; }
+
+    /* Notices Section */
+    .notices-section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 50px 20px;
+    }
+    .notices-section h2 {
+      color: #004080;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .notice-card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(19, 9, 165, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .notice-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+    .notice-card h3 {
+      color: #004080;
+      margin-bottom: 10px;
+    }
+    .notice-card p {
+      color: #555;
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+    .notice-date {
+      font-size: 13px;
+      color: #888;
+      margin-bottom: 10px;
+    }
+
+    /* Footer */
+    footer {
+      background: #004080;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: 40px;
+    }
+    footer .social {
+      margin-top: 10px;
+    }
+    footer .social a {
+      margin: 0 10px;
+      color: white;
+      font-size: 22px;
+      display: inline-block;
+      transition: transform 0.3s, color 0.3s;
+    }
+    footer .social a:hover {
+      color: #ffd700;
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Janata Boarding School</h1>
+    <p>Kamalamai, Sindhuli</p>
+    <div id="greeting"></div>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="teachers.html">Teachers</a>
+    <a href="facilities.html">Facilities</a>
+    <a href="notice.html" class="active">Notices</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>School Notices</h1>
+    <p>Stay updated with the latest announcements and important information.</p>
+  </section>
+
+  
+
+  <!-- Notices Section -->
+  <section class="notices-section">
+    <h2>Latest Notices</h2>
+
+    <div class="notice-card">
+      <div class="notice-date">August 20, 2025</div>
+      <h3>Annual Sports Day</h3>
+      <p>Our Annual Sports Day will be held on September 10, 2025. All students are encouraged to participate. Parents are welcome to attend.</p>
+    </div>
+
+
+
+    
+    <div class="notice-card">
+      <div class="notice-date">August 15, 2025</div>
+      <h3>Parent-Teacher Meeting</h3>
+      <p>The Parent-Teacher Meeting is scheduled for August 30, 2025. Parents are requested to meet the class teachers regarding student progress.</p>
+    </div>
+
+    <div class="notice-card">
+      <div class="notice-date">August 10, 2025</div>
+      <h3>Scholarship Announcement</h3>
+      <p>Scholarship applications for the new academic session are now open. Interested students can collect forms from the school office.</p>
+    </div>
+
+    <div class="notice-card">
+      <div class="notice-date">August 5, 2025</div>
+      <h3>Library Renovation</h3>
+      <p>The school library will be closed for renovation from August 12 to August 20, 2025. Students can use digital resources during this period.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Janata Boarding School. All Rights Reserved.</p>
+    <div class="social">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+  </footer>
+
+  <script>
+    // ===== LocalStorage: Visitor name & last visit =====
+    const greetingEl = document.getElementById('greeting');
+
+    let visitorName = localStorage.getItem('visitorName');
+    let lastVisit = localStorage.getItem('lastVisit');
+
+    if(!visitorName){
+      visitorName = prompt("Welcome! Please enter your name:");
+      if(visitorName) localStorage.setItem('visitorName', visitorName);
+    }
+
+    const now = new Date().toLocaleString();
+    if(visitorName){
+      let message = `Hello, ${visitorName}!`;
+      if(lastVisit){
+        message += ` Your last visit was on ${lastVisit}.`;
+      } else {
+        message += ` This is your first visit!`;
+      }
+      greetingEl.textContent = message;
+      localStorage.setItem('lastVisit', now);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teachers - Janata Boarding School</title>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f8fb;
+      color: #333;
+    }
+    h1, h2, h3 { margin: 0; }
+
+    /* Header */
+    header {
+      background: #004080;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      flex-direction: column;
+    }
+    #greeting {
+      font-size: 16px;
+      color: #ffd700;
+      margin-top: 5px;
+    }
+
+    /* Navbar */
+    nav {
+      background: #0066cc;
+      padding: 12px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 18px;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: #ffd700; }
+
+    /* Hero Section */
+    .hero {
+      background: url("teachers-banner.jpg") no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+    }
+    .hero h1 {
+      font-size: 38px;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+    }
+
+    /* Teachers Section */
+    section {
+      padding: 50px 20px;
+      max-width: 1100px;
+      margin: auto;
+      text-align: center;
+    }
+    .teachers {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+    }
+    .teacher-card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 250px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .teacher-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+    .teacher-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    .teacher-card h3 {
+      color: #004080;
+      margin-bottom: 8px;
+    }
+    .teacher-card p {
+      font-size: 15px;
+      color: #555;
+    }
+
+    /* Footer */
+    footer {
+      background: #004080;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: 40px;
+    }
+    footer .social {
+      margin-top: 10px;
+    }
+    footer .social a {
+      margin: 0 10px;
+      color: white;
+      font-size: 22px;
+      display: inline-block;
+      transition: transform 0.3s, color 0.3s;
+    }
+    footer .social a:hover {
+      color: #ffd700;
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Janata Boarding School</h1>
+    <p>Kamalamai, Sindhuli</p>
+    <div id="greeting"></div>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="teachers.html">Teachers</a>
+    <a href="facilities.html">Facilities</a>
+    <a href="notice.html">Notices</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Our Teachers</h1>
+  </section>
+
+  <!-- Teachers Section -->
+  <section>
+    <h2>Meet Our Dedicated Faculty</h2>
+    <p>Our teachers are passionate, experienced, and committed to guiding every student towards success.</p>
+
+    <div class="teachers">
+      <div class="teacher-card">
+        <img src="teacher1.jpg" alt="Tulsi Prasad Dhakal">
+        <h3>Tulsi Prasad Dhakal</h3>
+        <p>Principal</p>
+      </div>
+
+      <div class="teacher-card">
+        <img src="teacher2.jpg" alt="Ram Bahadur Thapa">
+        <h3>Ram Bahadur Thapa</h3>
+        <p>Vice Principal</p>
+      </div>
+
+      <div class="teacher-card">
+        <img src="teacher3.jpg" alt="Shatish">
+        <h3>Shatish Chandra Dhakal</h3>
+        <p>Teacher</p>
+      </div>
+
+
+      <div class="teacher-card">
+        <img src="teacher3.jpg" alt="Uttam Timilsina">
+        <h3>Uttam Timilsina</h3>
+        <p>Teacher</p>
+      </div>
+
+      <div class="teacher-card">
+        <img src="IMG_4163.jpeg" alt="Susmita Thapa">
+        <h3>Susmita Thapa</h3>
+        <p>Teacher</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Janata Boarding School. All Rights Reserved.</p>
+    <div class="social">
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+  </footer>
+
+  <script>
+    // ===== LocalStorage: Visitor name & last visit =====
+    const greetingEl = document.getElementById('greeting');
+
+    let visitorName = localStorage.getItem('visitorName');
+    let lastVisit = localStorage.getItem('lastVisit');
+
+    if(!visitorName){
+      visitorName = prompt("Welcome! Please enter your name:");
+      if(visitorName) localStorage.setItem('visitorName', visitorName);
+    }
+
+    const now = new Date().toLocaleString();
+    if(visitorName){
+      let message = `Hello, ${visitorName}!`;
+      if(lastVisit){
+        message += ` Your last visit was on ${lastVisit}.`;
+      } else {
+        message += ` This is your first visit!`;
+      }
+      greetingEl.textContent = message;
+      localStorage.setItem('lastVisit', now);
+    }
+  </script>
+</body>
+</html>
